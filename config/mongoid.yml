@@ -1,0 +1,14 @@
+development:
+  clients:
+    default:
+      database: ip_metadata
+      hosts:
+        - localhost:27017
+      options:
+        server_selection_timeout: 1
+test:
+  clients:
+    default:
+      database: test_database
+      hosts:
+        - localhost:27017

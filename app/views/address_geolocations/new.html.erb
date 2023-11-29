@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="page-header">
+    <h1>New Address Geolocation</h1>
+  </div>
+  <p style="color: green"><%= notice %></p>
+</div>
+<br>
+<div class="container">
+  <%= render "form", address_geolocation: @address_geolocation %>
+  <br>
+  <div>
+    <%= link_to "Back to address geolocations", address_geolocations_path, :class => "btn btn-primary btn-sm" %>
+  </div>
+</div>

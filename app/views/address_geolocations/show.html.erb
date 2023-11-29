@@ -1,0 +1,11 @@
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+
+  <%= render @address_geolocation %>
+
+  <div>
+    <%= link_to "Back to address geolocations", address_geolocations_path, :class => "btn btn-primary btn-sm" %>
+
+    <%= link_to "Destroy this address geolocation", @address_geolocation, data: { "turbo-method": :delete }, :class => "btn btn-primary btn-sm" %>
+  </div>
+</div>

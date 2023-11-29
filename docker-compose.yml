@@ -1,0 +1,17 @@
+# Docker Compose example
+version: '3'
+services:
+  mongodb:
+    image: mongodb/mongodb-community-server
+    container_name: mongo_container
+    ports:
+      - "27017:27017"
+
+  rails_app:
+    image: vstoian/professional-geolocation
+    environment:
+      - RAILS_MASTER_KEY=
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb

@@ -1,0 +1,27 @@
+<%= form_with(model: address_geolocation) do |form| %>
+  <% unless @errors.nil? or @errors.empty?%>
+    <div style="color: red">
+      <h2><%= pluralize(@errors.count, "error") %> prohibited this address_geolocation from being saved:</h2>
+
+      <ul>
+        <% @errors.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :address_type, style: "display: block" %>
+    <%= form.select :address_type, AddressGeolocation::ADDRESS_TYPES %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

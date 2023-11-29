@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Address Geolocations</h1>
+  </div>
+  <p style="color: green"><%= notice %></p>
+</div>
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Address</th>
+        <th>Address Type</th>
+        <th>IP</th>
+        <th>Meta</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @address_geolocations.each do |address_geolocation| %>
+      <tr>
+        <td><%= address_geolocation.address %></td>
+        <td><%= address_geolocation.address_type %></td>
+        <td><%= address_geolocation.ip %></td>
+        <td><%= address_geolocation.meta %></td>
+        <td>
+          <%= link_to "Show this", address_geolocation, :class => "btn btn-primary btn-sm" %>
+          <%= link_to "Delete this", address_geolocation, data: { "turbo-method": :delete, confirm: "Are you sure?" }, :class => "btn btn-primary btn-sm" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <%= link_to "New address geolocation", new_address_geolocation_path, :class => "btn btn-primary btn-sm" %>
+</div>
